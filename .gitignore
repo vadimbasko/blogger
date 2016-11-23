@@ -1,2 +1,5 @@
 idea/
 blogger.iml
+dist/
+.idea/
+node_modules/
