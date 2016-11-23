@@ -1,41 +1,6 @@
-<body expr:class='&quot;loading&quot; + data:blog.mobileClass'>
-<b:section class='navbar' id='navbar' maxwidgets='1' name='Navbar' showaddelement='no'>
-	<b:widget id='Navbar1' locked='true' title='Панель навигации' type='Navbar' visible='true'>
-		<b:includable id='main'>&lt;script type=&quot;text/javascript&quot;&gt;
-			function setAttributeOnload(object, attribute, val) {
-			if(window.addEventListener) {
-			window.addEventListener(&#39;load&#39;,
-			function(){ object[attribute] = val; }, false);
-			} else {
-			window.attachEvent(&#39;onload&#39;, function(){ object[attribute] = val; });
-			}
-			}
-			&lt;/script&gt;
-			&lt;div id=&quot;navbar-iframe-container&quot;&gt;&lt;/div&gt;
-			&lt;script type=&quot;text/javascript&quot; src=&quot;https://apis.google.com/js/plusone.js&quot;&gt;&lt;/script&gt;
-			&lt;script type=&quot;text/javascript&quot;&gt;
-			gapi.load(&quot;gapi.iframes:gapi.iframes.style.bubble&quot;, function() {
-			if (gapi.iframes &amp;&amp; gapi.iframes.getContext) {
-			gapi.iframes.getContext().openChild({
-			url: &#39;https://www.blogger.com/navbar.g?targetBlogID\x3d774944341760927734\x26blogName\x3dCustom+Blogger+Template\x26publishMode\x3dPUBLISH_MODE_BLOGSPOT\x26navbarType\x3dLIGHT\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttps://test846.blogspot.com/search\x26blogLocale\x3dru\x26v\x3d2\x26homepageUrl\x3dhttps://test846.blogspot.com/\x26vt\x3d-684140931411882431&#39;,
-			where: document.getElementById(&quot;navbar-iframe-container&quot;),
-			id: &quot;navbar-iframe&quot;
-			});
-			}
-			});
-			&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
-			(function() {
-			var script = document.createElement(&#39;script&#39;);
-			script.type = &#39;text/javascript&#39;;
-			script.src = &#39;//pagead2.googlesyndication.com/pagead/js/google_top_exp.js&#39;;
-			var head = document.getElementsByTagName(&#39;head&#39;)[0];
-			if (head) {
-			head.appendChild(script);
-			}})();
-			&lt;/script&gt;
-		</b:includable>
-	</b:widget>
-</b:section>
+<body expr:class='&quot;loading&quot; + data:blog.mobileClass' xmlns:expr="http://www.w3.org/1999/xhtml">
+
+<!--{{> navbar}}-->
 
 <b:if cond='data:blog.pageType == &quot;index&quot;'>
 	<div itemscope='itemscope' itemtype='http://schema.org/Blog' style='display: none;'>
@@ -672,52 +637,8 @@
 																			<div style='clear: both;'/> <!-- clear for photos floats -->
 																		</div>
 
-																		<div class='post-footer'>
-																			<div class='post-footer-line post-footer-line-1'>
-              <span class='post-author vcard'>
-                <b:if cond='data:top.showAuthor'>
-                  <b:if cond='data:post.authorProfileUrl'>
-                    <span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
-                      <meta expr:content='data:post.authorProfileUrl' itemprop='url'/>
-                      <a expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
-                        <span itemprop='name'><data:post.author/></span>
-                      </a>
-                    </span>
-                  <b:else/>
-                    <span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
-                      <span itemprop='name'><data:post.author/></span>
-                    </span>
-                  </b:if>
-                </b:if>
-              </span>
+																		<!-- post footer -->
 
-																				<span class='post-timestamp'>
-                <b:if cond='data:top.showTimestamp'>
-                  <data:top.timestampLabel/>
-                  <b:if cond='data:post.url'>
-                    <meta expr:content='data:post.url.canonical' itemprop='url'/>
-                    <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'><abbr class='published' expr:title='data:post.timestampISO8601' itemprop='datePublished'><data:post.timestamp/></abbr></a>
-                  </b:if>
-                </b:if>
-              </span>
-
-																				<span class='post-comment-link'>
-                <b:include cond='data:blog.pageType not in {&quot;item&quot;,&quot;static_page&quot;}                                  and data:post.allowComments' data='post' name='comment_count_picker'/>
-              </span>
-																			</div>
-
-																			<div class='post-footer-line post-footer-line-2'>
-																				<b:if cond='data:top.showMobileShare'>
-																					<div class='mobile-link-button goog-inline-block' id='mobile-share-button'>
-																						<a href='javascript:void(0);'><data:shareMsg/></a>
-																					</div>
-																				</b:if>
-																				<b:if cond='data:top.showDummy'>
-																					<div class='goog-inline-block dummy-container'><data:post.dummyTag/></div>
-																				</b:if>
-																			</div>
-
-																		</div>
 																	</div>
 
 																	<b:include cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}' data='post' name='comment_picker'/>
@@ -785,112 +706,8 @@
 																</div>
 															</b:if>
 
-															<div class='post-footer'>
-																<div class='post-footer-line post-footer-line-1'>
-      <span class='post-author vcard'>
-        <b:if cond='data:top.showAuthor'>
-          <data:top.authorLabel/>
-            <b:if cond='data:post.authorProfileUrl'>
-              <span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
-                <meta expr:content='data:post.authorProfileUrl' itemprop='url'/>
-                <a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
-                  <span itemprop='name'><data:post.author/></span>
-                </a>
-              </span>
-            <b:else/>
-              <span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
-                <span itemprop='name'><data:post.author/></span>
-              </span>
-            </b:if>
-        </b:if>
-      </span>
+															<!-- post-footer-2 -->
 
-																	<span class='post-timestamp'>
-        <b:if cond='data:top.showTimestamp'>
-          <data:top.timestampLabel/>
-          <b:if cond='data:post.url'>
-            <meta expr:content='data:post.url.canonical' itemprop='url'/>
-            <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'><abbr class='published' expr:title='data:post.timestampISO8601' itemprop='datePublished'><data:post.timestamp/></abbr></a>
-          </b:if>
-        </b:if>
-      </span>
-
-																	<span class='reaction-buttons'>
-        <b:if cond='data:top.showReactions'>
-          <table border='0' cellpadding='0' cellspacing='0' width='100%'><tr>
-            <td class='reactions-label-cell' nowrap='nowrap' valign='top' width='1%'>
-              <span class='reactions-label'>
-              <data:top.reactionsLabel/></span>&#160;</td>
-            <td><iframe allowtransparency='true' class='reactions-iframe' expr:src='data:post.reactionsUrl' frameborder='0' name='reactions' scrolling='no'/></td>
-           </tr></table>
-        </b:if>
-      </span>
-
-																	<span class='post-comment-link'>
-        <b:include cond='data:blog.pageType not in {&quot;item&quot;,&quot;static_page&quot;}                          and data:post.allowComments' data='post' name='comment_count_picker'/>
-      </span>
-
-																	<!-- backlinks -->
-																	<span class='post-backlinks post-comment-link'>
-         <b:if cond='data:blog.pageType not in {&quot;item&quot;,&quot;static_page&quot;}                      and data:post.showBacklinks'>
-           <a class='comment-link' expr:href='data:post.url + &quot;#links&quot;'><data:top.backlinkLabel/></a>
-         </b:if>
-       </span>
-
-																	<span class='post-icons'>
-        <!-- email post links -->
-        <b:if cond='data:post.emailPostUrl'>
-          <span class='item-action'>
-          <a expr:href='data:post.emailPostUrl' expr:title='data:top.emailPostMsg'>
-            <img alt='' class='icon-action' height='13' src='https://resources.blogblog.com/img/icon18_email.gif' width='18'/>
-          </a>
-          </span>
-        </b:if>
-
-																		<!-- quickedit pencil -->
-        <b:include data='post' name='postQuickEdit'/>
-      </span>
-
-																	<!-- share buttons -->
-																	<div class='post-share-buttons goog-inline-block'>
-																		<b:include cond='data:post.sharePostUrl' data='post' name='shareButtons'/>
-																	</div>
-
-																</div>
-
-																<div class='post-footer-line post-footer-line-2'>
-      <span class='post-labels'>
-        <b:if cond='data:top.showPostLabels and data:post.labels'>
-          <data:postLabelsLabel/>
-          <b:loop values='data:post.labels' var='label'>
-            <a expr:href='data:label.url' rel='tag'><data:label.name/></a><b:if cond='not data:label.isLast'>,</b:if>
-          </b:loop>
-        </b:if>
-      </span>
-																</div>
-
-																<div class='post-footer-line post-footer-line-3'>
-      <span class='post-location'>
-        <b:if cond='data:top.showLocation and data:post.location'>
-          <data:postLocationLabel/>
-          <a expr:href='data:post.location.mapsUrl' target='_blank'><data:post.location.name/></a>
-        </b:if>
-      </span>
-																</div>
-																<b:if cond='data:post.authorAboutMe'>
-																	<div class='author-profile' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
-																		<b:if cond='data:post.authorPhoto.url'>
-																			<img expr:src='data:post.authorPhoto.url' itemprop='image' width='50px'/>
-																		</b:if>
-																		<div>
-																			<a class='g-profile' expr:href='data:post.authorProfileUrl' itemprop='url' rel='author' title='author profile'>
-																				<span itemprop='name'><data:post.author/></span>
-																			</a>
-																		</div>
-																		<span itemprop='description'><data:post.authorAboutMe/></span>
-																	</div>
-																</b:if>
-															</div>
 														</div>
 													</b:includable>
 													<b:includable id='postQuickEdit' var='post'>
@@ -1202,43 +1019,7 @@
 					</div>
 				</div>
 
-				<footer>
-					<div class='footer-outer'>
-						<div class='footer-cap-top cap-top'>
-							<div class='cap-left'/>
-							<div class='cap-right'/>
-						</div>
-						<div class='fauxborder-left footer-fauxborder-left'>
-							<div class='fauxborder-right footer-fauxborder-right'/>
-							<div class='region-inner footer-inner'>
-								<macro:include id='footer-sections' name='sections'>
-									<macro:param default='2' name='num'/>
-									<macro:param default='footer' name='idPrefix'/>
-									<macro:param default='foot' name='class'/>
-									<macro:param default='false' name='includeBottom'/>
-								</macro:include>
-								<!-- outside of the include in order to lock Attribution widget -->
-								<b:section class='foot' id='footer-3' name='Footer' showaddelement='no'>
-									<b:widget id='Attribution1' locked='true' title='' type='Attribution' visible='true'>
-										<b:includable id='main'>
-											<div class='widget-content' style='text-align: center;'>
-												<b:if cond='data:attribution != &quot;&quot;'>
-													<data:attribution/>
-												</b:if>
-											</div>
-
-											<b:include name='quickedit'/>
-										</b:includable>
-									</b:widget>
-								</b:section>
-							</div>
-						</div>
-						<div class='footer-cap-bottom cap-bottom'>
-							<div class='cap-left'/>
-							<div class='cap-right'/>
-						</div>
-					</div>
-				</footer>
+				<!-- footer -->
 
 				<!-- content -->
 			</div>
