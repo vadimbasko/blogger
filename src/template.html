@@ -15,8 +15,19 @@
 
 	<title><data:blog.pageTitle/></title>
 
-	<b:skin><![CDATA[
-		]]></b:skin>
+	<b:skin>
+		<![CDATA[]]>
+	</b:skin>
+
+	<style>
+		.video-img-link img {
+			width: 700px;
+		}
+		.img-link img {
+			width: 700px;
+		}
+	</style>
+
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -26,58 +37,63 @@
 
 <body>
 
-{{> header}}
+<div class="container">
 
-<b:section class='main' id='main' showaddelement='yes'>
+	{{> header}}
 
-	<b:widget id='Blog1' locked='true' title='Сообщения блога' type='Blog' visible='true'>
+	<b:section class='main' id='main' showaddelement='yes'>
 
-		<b:includable id='main' var='top'>
-			<!-- posts -->
-			<div class='blog-posts hfeed'>
+		<b:widget id='Blog1' locked='true' title='Сообщения блога' type='Blog' visible='true'>
 
-				<b:include data='top' name='status-message'/>
+			<b:includable id='main' var='top'>
+				<!-- posts -->
+				<div class='blog-posts hfeed'>
 
-				<b:loop values='data:posts' var='post'>
-					<b:if cond='data:post.isDateStart and not data:post.isFirstPost'>
+					<b:include data='top' name='status-message'/>
+
+					<b:loop values='data:posts' var='post'>
+						<b:if cond='data:post.isDateStart and not data:post.isFirstPost'>
+							&lt;/div&gt;&lt;/div&gt;
+						</b:if>
+						<b:if cond='data:post.isDateStart'>
+							&lt;div class=&quot;date-outer&quot;&gt;
+						</b:if>
+						<!--<b:if cond='data:post.dateHeader'>-->
+							<!--<div class='date-header'><span><data:post.dateHeader/></span></div>-->
+						<!--</b:if>-->
+						<b:if cond='data:post.isDateStart'>
+							&lt;div class=&quot;date-posts&quot;&gt;
+						</b:if>
+						<div class='post-outer'>
+							<b:include data='post' name='post'/>
+							<b:include cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}'
+									   data='post' name='comment_picker'/>
+						</div>
+					</b:loop>
+
+					<b:if cond='data:numPosts != 0'>
 						&lt;/div&gt;&lt;/div&gt;
 					</b:if>
-					<b:if cond='data:post.isDateStart'>
-						&lt;div class=&quot;date-outer&quot;&gt;
-					</b:if>
-					<b:if cond='data:post.dateHeader'>
-						<h2 class='date-header'><span><data:post.dateHeader/></span></h2>
-					</b:if>
-					<b:if cond='data:post.isDateStart'>
-						&lt;div class=&quot;date-posts&quot;&gt;
-					</b:if>
-					<div class='post-outer'>
-						<b:include data='post' name='post'/>
-						<b:include cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}'
-								   data='post' name='comment_picker'/>
-					</div>
-				</b:loop>
 
-				<b:if cond='data:numPosts != 0'>
-					&lt;/div&gt;&lt;/div&gt;
-				</b:if>
+				</div>
 
-			</div>
+				<!-- navigation -->
+				<b:include name='nextprev'/>
 
-			<!-- navigation -->
-			<!--<b:include name='nextprev'/>-->
+				<!-- feed links -->
+				<!--<b:include name='feedLinks'/>-->
 
-			<!-- feed links -->
-			<!--<b:include name='feedLinks'/>-->
+			</b:includable>
 
-		</b:includable>
+			{{> main-post}}
 
-		{{> main-post}}
+			{{> main-incl}}
 
-		{{> main-incl}}
+		</b:widget>
+	</b:section>
 
-	</b:widget>
-</b:section>
+</div>
+
 
 </body>
 
