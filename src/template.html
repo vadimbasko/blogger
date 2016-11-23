@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml'
-	  xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data'
-	  xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 
 <head>
 	<meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
@@ -13,13 +11,58 @@
 	</b:if>
 	<b:include data='blog' name='all-head-content'/>
 	<title><data:blog.pageTitle/></title>
-	<b:skin>
-	</b:skin>
+	<b:skin><![CDATA[
+		]]></b:skin>
 </head>
 
 <body>
 <b:section class='main' id='main' showaddelement='yes'>
-	<b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'/>
+	<b:widget id='Blog1' locked='true' title='Сообщения блога' type='Blog' visible='true'>
+
+		<b:includable id='main' var='top'>
+			<!-- posts -->
+			<div class='blog-posts hfeed'>
+
+				<b:include data='top' name='status-message'/>
+
+				<b:loop values='data:posts' var='post'>
+					<b:if cond='data:post.isDateStart and not data:post.isFirstPost'>
+						&lt;/div&gt;&lt;/div&gt;
+					</b:if>
+					<b:if cond='data:post.isDateStart'>
+						&lt;div class=&quot;date-outer&quot;&gt;
+					</b:if>
+					<b:if cond='data:post.dateHeader'>
+						<h2 class='date-header'><span><data:post.dateHeader/></span></h2>
+					</b:if>
+					<b:if cond='data:post.isDateStart'>
+						&lt;div class=&quot;date-posts&quot;&gt;
+					</b:if>
+					<div class='post-outer'>
+						<b:include data='post' name='post'/>
+						<b:include cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}'
+								   data='post' name='comment_picker'/>
+					</div>
+				</b:loop>
+
+				<b:if cond='data:numPosts != 0'>
+					&lt;/div&gt;&lt;/div&gt;
+				</b:if>
+
+			</div>
+
+			<!-- navigation -->
+			<b:include name='nextprev'/>
+
+			<!-- feed links -->
+			<!--<b:include name='feedLinks'/>-->
+
+		</b:includable>
+
+		{{> main-post}}
+
+		{{> main-incl}}
+	</b:widget>
 </b:section>
 </body>
 
