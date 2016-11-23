@@ -1,13 +1,21 @@
-<b:widget id='HTML1' locked='false' title='' type='HTML' visible='true'>
+<b:widget id='HTML1' locked='false' title='Главное.' type='HTML' version='1' visible='true'>
 	<b:includable id='main'>
-		<!-- only display title if it's non-empty -->
-		<b:if cond='data:title != &quot;&quot;'>
-			<h2 class='title'><data:title/></h2>
-		</b:if>
 		<div class='widget-content'>
 			<data:content/>
 		</div>
-
-		<b:include name='quickedit'/>
+	</b:includable>
+</b:widget>
+<b:widget id='HTML2' locked='false' title='Реки Азии.' type='HTML' version='1' visible='true'>
+	<b:includable id='main'>
+		<div class='widget-content'>
+			<data:content/>
+		</div>
+	</b:includable>
+</b:widget>
+<b:widget id='HTML3' locked='false' title='Остальное.' type='HTML' version='1' visible='true'>
+	<b:includable id='main'>
+		<div class='widget-content'>
+			<data:content/>
+		</div>
 	</b:includable>
 </b:widget>
