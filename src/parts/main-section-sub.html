@@ -64,6 +64,7 @@
 		</script>
 	</div>
 </b:includable>
+
 <b:includable id='commentDeleteIcon' var='comment'>
   <span expr:class='&quot;item-control &quot; + data:comment.adminClass'>
     <b:if cond='data:showCmtPopup'>
@@ -77,6 +78,7 @@
     </b:if>
   </span>
 </b:includable>
+
 <b:includable id='comment_count_picker' var='post'>
 	<b:if cond='data:post.commentSource == 1'>
     <span class='cmt_count_iframe_holder' expr:data-count='data:post.numComments' expr:data-onclick='data:post.addCommentOnclick' expr:data-post-url='data:post.url' expr:data-url='data:post.url.canonical.http'>
@@ -87,6 +89,7 @@
 		</a>
 	</b:if>
 </b:includable>
+
 <b:includable id='comment_picker' var='post'>
 	<b:if cond='data:post.commentSource == 1'>
 		<b:include data='post' name='iframe_comments'/>
@@ -96,6 +99,7 @@
 		<b:include data='post' name='comments'/>
 	</b:if>
 </b:includable>
+
 <b:includable id='comments' var='post'>
 	<div class='comments' id='comments'>
 		<a name='comments'/>
@@ -207,6 +211,7 @@
 		</div>
 	</div>
 </b:includable>
+
 <b:includable id='feedLinks'>
 	<b:if cond='data:blog.pageType != &quot;item&quot;'> <!-- Blog feed links -->
 		<b:if cond='data:feedLinks'>
@@ -223,6 +228,7 @@
 		</div>
 	</b:if>
 </b:includable>
+
 <b:includable id='feedLinksBody' var='links'>
 	<div class='feed-links'>
 		<data:feedLinksMsg/>
@@ -231,6 +237,7 @@
 		</b:loop>
 	</div>
 </b:includable>
+
 <b:includable id='iframe_comments' var='post'>
 
 	<b:if cond='data:post.allowIframeComments'>
@@ -242,6 +249,7 @@
 		</b:if>
 	</b:if>
 </b:includable>
+
 <b:includable id='mobile-index-post' var='post'>
 	<div class='mobile-date-outer date-outer'>
 		<b:if cond='data:post.dateHeader'>
@@ -281,6 +289,7 @@
 		</div>
 	</div>
 </b:includable>
+
 <b:includable id='mobile-main' var='top'>
 	<!-- posts -->
 	<div class='blog-posts hfeed'>
@@ -300,6 +309,7 @@
 
 	<b:include name='mobile-nextprev'/>
 </b:includable>
+
 <b:includable id='mobile-nextprev'>
 	<div class='blog-pager' id='blog-pager'>
 		<b:if cond='data:newerPageUrl'>
@@ -325,6 +335,7 @@
 	</div>
 	<div class='clear'/>
 </b:includable>
+
 <b:includable id='mobile-post' var='post'>
 	<div class='date-outer'>
 		<b:if cond='data:post.dateHeader'>
@@ -371,6 +382,7 @@
 		</div>
 	</div>
 </b:includable>
+
 <b:includable id='nextprev'>
 	<div class='blog-pager' id='blog-pager'>
 		<b:if cond='data:newerPageUrl'>
@@ -396,6 +408,7 @@
 	</div>
 	<div class='clear'/>
 </b:includable>
+
 <b:includable id='post' var='post'>
 	<div class='post hentry uncustomized-post-template' itemprop='blogPost' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
 		<b:if cond='data:post.firstImageUrl'>
@@ -435,6 +448,7 @@
 
 	</div>
 </b:includable>
+
 <b:includable id='postQuickEdit' var='post'>
 	<b:if cond='data:post.editUrl'>
     <span expr:class='&quot;item-control &quot; + data:post.adminClass'>
@@ -444,9 +458,11 @@
     </span>
 	</b:if>
 </b:includable>
+
 <b:includable id='shareButtons' var='post'>
 	<b:if cond='data:top.showEmailButton'><a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'><span class='share-button-link-text'><data:top.emailThisMsg/></span></a></b:if><b:if cond='data:top.showBlogThisButton'><a class='goog-inline-block share-button sb-blog' expr:href='data:post.sharePostUrl + &quot;&amp;target=blog&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' expr:title='data:top.blogThisMsg' target='_blank'><span class='share-button-link-text'><data:top.blogThisMsg/></span></a></b:if><b:if cond='data:top.showTwitterButton'><a class='goog-inline-block share-button sb-twitter' expr:href='data:post.sharePostUrl + &quot;&amp;target=twitter&quot;' expr:title='data:top.shareToTwitterMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToTwitterMsg/></span></a></b:if><b:if cond='data:top.showFacebookButton'><a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToFacebookMsg/></span></a></b:if><b:if cond='data:top.showPinterestButton'><a class='goog-inline-block share-button sb-pinterest' expr:href='data:post.sharePostUrl + &quot;&amp;target=pinterest&quot;' expr:title='data:top.shareToPinterestMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToPinterestMsg/></span></a></b:if><b:if cond='data:top.showPlusOne'><div class='goog-inline-block google-plus-share-container'><data:post.googlePlusShareTag/></div></b:if>
 </b:includable>
+
 <b:includable id='status-message'>
 	<b:if cond='data:navMessage'>
 		<div class='status-msg-wrap'>
@@ -462,6 +478,7 @@
 		<div style='clear: both;'/>
 	</b:if>
 </b:includable>
+
 <b:includable id='threaded-comment-form' var='post'>
 	<div class='comment-form'>
 		<a name='comment-form'/>
@@ -482,6 +499,7 @@
 		</script>
 	</div>
 </b:includable>
+
 <b:includable id='threaded_comment_js' var='post'>
 	<script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
 
@@ -664,6 +682,7 @@
 		// ]]>
 	</script>
 </b:includable>
+
 <b:includable id='threaded_comments' var='post'>
 	<div class='comments' id='comments'>
 		<a name='comments'/>
