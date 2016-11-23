@@ -4,19 +4,32 @@
 
 <head>
 	<meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
+
 	<b:if cond='data:blog.isMobile'>
 		<meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
 		<b:else/>
 		<meta content='width=1100' name='viewport'/>
 	</b:if>
+
 	<b:include data='blog' name='all-head-content'/>
+
 	<title><data:blog.pageTitle/></title>
+
 	<b:skin><![CDATA[
 		]]></b:skin>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
 </head>
 
 <body>
+
+{{> header}}
+
 <b:section class='main' id='main' showaddelement='yes'>
+
 	<b:widget id='Blog1' locked='true' title='Сообщения блога' type='Blog' visible='true'>
 
 		<b:includable id='main' var='top'>
@@ -52,7 +65,7 @@
 			</div>
 
 			<!-- navigation -->
-			<b:include name='nextprev'/>
+			<!--<b:include name='nextprev'/>-->
 
 			<!-- feed links -->
 			<!--<b:include name='feedLinks'/>-->
@@ -62,8 +75,10 @@
 		{{> main-post}}
 
 		{{> main-incl}}
+
 	</b:widget>
 </b:section>
+
 </body>
 
 </html>
